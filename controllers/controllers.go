@@ -10,8 +10,8 @@ import (
 )
 
 // ListChannels -
-// 				Returns handler that dumps current channel list
-// 				Takes in a pointer to the set of current channels
+//              Returns handler that dumps current channel list
+//              Takes in a pointer to the set of current channels
 func ListChannels(channels *set.Set) gin.HandlerFunc {
 	return func(context *gin.Context) {
 		log.Debug("Current channel list: ", (*channels).String())
@@ -19,10 +19,10 @@ func ListChannels(channels *set.Set) gin.HandlerFunc {
 	}
 }
 
-// JoinChannel 	-
-//				Attempts to join the channel specified in the path variable
-//				200 response indicates request was accepted
-//				Need to check /channels to verify
+// JoinChannel -
+//             Attempts to join the channel specified in the path variable
+//             200 response indicates request was accepted
+//             Need to check /channels to verify
 func JoinChannel(messages chan string) gin.HandlerFunc {
 	return func(context *gin.Context) {
 		channel := context.Param("channel")
@@ -32,9 +32,9 @@ func JoinChannel(messages chan string) gin.HandlerFunc {
 }
 
 // LeaveChannel -
-//				Attempts to leave the channel specified in the path variable
-//				200 response indicates request was accepted
-//				Need to check /channels to verify
+//              Attempts to leave the channel specified in the path variable
+//              200 response indicates request was accepted
+//              Need to check /channels to verify
 func LeaveChannel(messages chan string) gin.HandlerFunc {
 	return func(context *gin.Context) {
 		channel := context.Param("channel")

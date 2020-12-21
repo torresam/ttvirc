@@ -16,8 +16,7 @@ func isNumeric(s string) bool {
 }
 
 // MessageHandler -
-//				  Handles different commands based on Twitch IRC
-//
+//                Handles different commands based on Twitch IRC
 func MessageHandler(channels *set.Set) irc.HandlerFunc {
 	return func(c *irc.Client, m *irc.Message) {
 		if isNumeric(m.Command) {
